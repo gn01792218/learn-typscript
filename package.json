@@ -1,0 +1,16 @@
+{
+  "name": "typscript-demo",
+  "version": "1.0.0",
+  "description": "Let's learn typscript together!!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"lite-server"
+  },
+  "author": "Hung Meng Tse",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
