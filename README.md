@@ -17,7 +17,7 @@ tsc file.ts
 ```
 tsc --init
 ```
-### 2.設定需要編譯的檔案
+### 2.(Option)指定要編譯哪個資料夾下的檔案
 ```
 "compilerOptions": {...略
 },
