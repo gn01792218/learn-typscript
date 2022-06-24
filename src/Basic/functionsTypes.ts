@@ -41,3 +41,10 @@ interface sunNumber {
 let sum:sunNumber = function(num1:number,num2:number):number{
 	return num1+num2
 }
+
+//5.只有一個參數的函式
+//假如想要在參數方面使用簡寫的話，一定得在前面多一個宣告
+const printStr:(input:string | number)=>void = input=>console.log(input)
+
+//否則還是得乖乖寫括號
+const printStr2 = (input:string | number)=>console.log(input)
