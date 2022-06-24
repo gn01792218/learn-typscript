@@ -48,3 +48,36 @@ const printStr:(input:string | number)=>void = input=>console.log(input)
 
 //否則還是得乖乖寫括號
 const printStr2 = (input:string | number)=>console.log(input)
+
+//6.為函式參數設置預設值
+const add = (n1:number, n2:number = 10)=> n1+n2
+console.log(add(1)) //11
+//****注意****
+//帶有預設值的參數，只能設置在最右邊
+const sum3 = (n1:number=10,n2:number=5,n3:number)=>n1+n2+n3
+//假如預設參數的右邊有東西，將會導致預設值無法被自動計算
+console.log(sum3(10,10))  //不給過，說未提供n3
+
+//7.其餘運算子 [...] (spread operator)的宣告
+function sumMore(...nums:number[]){
+    let sum = 0
+    nums.forEach(n=>{
+        sum+=n
+    })
+    return sum
+}
+//使用reduce來寫，更猛
+function sumMoreReduce(...nums:number[]){
+    return nums.reduce((preValue,currentValue)=>{
+        return preValue+currentValue
+    },0)
+}
+//也可以使用元組
+function displayTuples(...inputs:[number,string,number]){
+    return inputs.reduce((preValue,currentValue)=>{
+        return `${preValue}${currentValue}`
+    })
+}
+console.log(displayTuples(1,'加',2)) //1加2
+//[...]運算子筆記
+//https://www.notion.so/spread-operator-dad77e9513e14086897d78387655407b
