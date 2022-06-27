@@ -19,6 +19,10 @@ class Department {
     printEmployeeInformation(this:Department){
         console.log(this.employee)
     }
+    //方法也可以私有哦
+    private privatMethods(){
+        //撰寫邏輯...
+    }
 }
 
 //創建實體
