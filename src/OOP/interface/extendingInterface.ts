@@ -13,7 +13,6 @@ interface Style extends Color,Size{
    type:string,
 }
 
-//class只能繼承一個
 class Box implements Style{
     color:string = 'red'
     width:number = 100
