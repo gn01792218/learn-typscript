@@ -61,4 +61,32 @@ function useVehicle(v:Vehicle,amount?:number){
 useVehicle(v1)
 useVehicle(v2,500)
 
+//4.使用literal type來做守衛 : 最安全又方便!但只適用於 Object
+interface Bird {
+    type:'BIRD',
+    flyingspeed:number
+}
+interface Horse {
+    type:'HORSE',
+    runningspeed:number
+}
 
+type AnyAnimal = Bird | Horse;
+
+function printMoveSpeed(a:AnyAnimal){
+    let speed;
+    switch(a.type){
+        case 'BIRD':
+            speed = a.flyingspeed
+            break
+        case "HORSE":
+            speed = a.runningspeed
+            break
+    }
+    console.log(`${a.type}speed : ${speed}`)
+}
+const h1:Horse = {
+    type:'HORSE',
+    runningspeed:500
+}
+printMoveSpeed(h1)
