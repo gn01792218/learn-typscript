@@ -10,7 +10,6 @@ interface Attackable {
     name:string,
     attack:(target:Person2)=>void
 }
-
 class Person2 implements Greetable,Attackable{
    //實做介面的屬性一定只能是public
    constructor(public name:string){}
