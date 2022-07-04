@@ -25,3 +25,16 @@ function countAndDescribe<T extends Lengthy>(element:T):[T,string]{
 console.log(countAndDescribe('This is a string')) //[ 'This is a string', 'Got 16 elements.' ]
 
 console.log(countAndDescribe([1,2,3]))  //[ [ 1, 2, 3 ], 'Got 3 elements.' ]
+
+//3.限制泛型只能是物件中有的屬性key
+//以下這個方法，可以輸入key從物件中返回值
+//正常情況下我們無法知道該key值是否存在於該obj中，
+//因此限制key的型態為keyof T ，
+//就可以確保key的型態一定是T裡面有的屬性值
+function extractAndConvert<T extends object,U extends keyof T>(obj:T,key:U){
+    return obj[key]
+}
+
+extractAndConvert({name:'JJ',age:25},'name')  //JJ
+extractAndConvert({name:'JJ',age:25},'age')  //25
+// extractAndConvert({name:'JJ',age:25},'salary')  //報錯，類型 '"salary"' 的引數不可指派給類型 '"name" | "age"' 的參數
