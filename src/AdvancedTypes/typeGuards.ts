@@ -79,7 +79,7 @@ function printMoveSpeed(a:AnyAnimal){
         case 'BIRD':
             speed = a.flyingspeed
             break
-        case "HORSE":
+        case 'HORSE':
             speed = a.runningspeed
             break
     }
